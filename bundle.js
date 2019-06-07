@@ -9,12 +9,12 @@ var meta = require('@turf/meta');
 
 /**
  * Returns the counter-clockwise angle between
- * { coords[a], coords[a + 1] } to { coords[b], coords[b + 1] }
+ * `{ coords[a], coords[a + 1] }` to `{ coords[b], coords[b + 1] }`
  *
  * @param {Array<[number, number]>} coords List of GeoJSON coordinates
  * @param {Number} a starting index of the first ray
  * @param {Number} b starting index of the second ray
- * @returns {Number} counter-clockwise angle between 0 and 2 * pi
+ * @returns {Number} counter-clockwise angle between 0 and `2 * pi`
  */
 function dtheta(coords, a, b) {
   // For bearings +180 is clockwise, -180 is counterclockwise
@@ -39,12 +39,12 @@ function dtheta(coords, a, b) {
  * Shamos, Michael (1978). "Computational Geometry" (PDF). Yale University. pp. 76–81.
  *
  * The rotating calipers method requires a convex hull so we use mapbox's concaveman,
- * which runs in O(n * log n) time as stated [here](https://github.com/mapbox/concaveman).
+ * which runs in `O(n * log n)` time as stated [here](https://github.com/mapbox/concaveman).
  *
  * The algorithm in the paper runs in about O(n) time, making this entire algorithm
- * run in O(n) + O(n * log n) = O(n * log n) time.
+ * run in `O(n)` + `O(n * log n)` = `O(n * log n)` time.
  *
- * @name diamter
+ * @name diameter
  * @param {GeoJSON} geojson input Feature or FeatureCollection
  * @returns {Number} the polygon diameter of the GeoJSON
  * @example

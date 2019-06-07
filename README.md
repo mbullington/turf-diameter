@@ -11,14 +11,14 @@ a Feature or FeatureCollection.
 
 -   [dtheta](#dtheta)
     -   [Parameters](#parameters)
--   [diamter](#diamter)
+-   [diameter](#diameter)
     -   [Parameters](#parameters-1)
     -   [Examples](#examples)
 
 ### dtheta
 
 Returns the counter-clockwise angle between
-{ coords[a], coords[a + 1] } to { coords[b], coords[b + 1] }
+`{ coords[a], coords[a + 1] }` to `{ coords[b], coords[b + 1] }`
 
 #### Parameters
 
@@ -26,9 +26,9 @@ Returns the counter-clockwise angle between
 -   `a` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** starting index of the first ray
 -   `b` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** starting index of the second ray
 
-Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** counter-clockwise angle between 0 and 2 \* pi
+Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** counter-clockwise angle between 0 and `2 * pi`
 
-### diamter
+### diameter
 
 Takes a [Feature](Feature) or [FeatureCollection](FeatureCollection) and returns the
 [polygon diameter](http://mathworld.wolfram.com/PolygonDiameter.html).
@@ -39,10 +39,10 @@ The concepts from the article are based off of the following paper:
 Shamos, Michael (1978). "Computational Geometry" (PDF). Yale University. pp. 76–81.
 
 The rotating calipers method requires a convex hull so we use mapbox's concaveman,
-which runs in O(n \* log n) time as stated [here](https://github.com/mapbox/concaveman).
+which runs in `O(n * log n)` time as stated [here](https://github.com/mapbox/concaveman).
 
 The algorithm in the paper runs in about O(n) time, making this entire algorithm
-run in O(n) + O(n _ log n) = O(n _ log n) time.
+run in `O(n)` + `O(n * log n)` = `O(n * log n)` time.
 
 #### Parameters
 
