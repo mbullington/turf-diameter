@@ -1,0 +1,31 @@
+{
+  "name": "turf-diameter",
+  "version": "1.0.0",
+  "description": "An unofficial Turf function for calculating the polygon diameter of a Feature.",
+  "main": "bundle.js",
+  "author": "Michael Bullington <Michael.Bullington@dji.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@turf/bearing": "^6.0.1",
+    "@turf/distance": "^6.0.1",
+    "@turf/meta": "^6.0.2",
+    "concaveman": "^1.1.1"
+  },
+  "devDependencies": {
+    "husky": "^2.4.0",
+    "jest": "^24.8.0",
+    "promise-fs": "^2.1.0",
+    "rollup": "^1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build",
+      "pre-push": "yarn test"
+    }
+  }
+}
